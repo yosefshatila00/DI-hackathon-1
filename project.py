@@ -50,11 +50,10 @@ def get_mood(text):
     elif polarity < -0.2:
         return "sad music" 
     else:
-        return "chill and peaceful"
+        return "chill and calm"
     
 def suggest_music(text):
     mood=get_mood(text)
-    print(mood)
     token=get_token()
     tracks=search_for_music(token,mood)
     chosen_track=random.choice(tracks)
@@ -65,6 +64,8 @@ def suggest_music(text):
 if __name__ == "__main__":
 
     print("simple music suggester")
+    print("tell me how you feel so i can suggest music")
+    print("type 'quit', 'exit' or 'q' to stop")
     while True:
         user_input = input("How are you feeling? ")
         
